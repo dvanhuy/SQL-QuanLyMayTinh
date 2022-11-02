@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidJava/SQLITEQuanLyMayTinh/app/src/main/res/drawable/ic_update.xml" value="0.1675" />
         <entry key="..\:/AndroidJava/SQLITEQuanLyMayTinh/app/src/main/res/drawable/main_bgitem.xml" value="0.1675" />
         <entry key="..\:/AndroidJava/SQLITEQuanLyMayTinh/app/src/main/res/layout/activity_add_category.xml" value="0.25" />
         <entry key="..\:/AndroidJava/SQLITEQuanLyMayTinh/app/src/main/res/layout/activity_list_computer.xml" value="0.25" />

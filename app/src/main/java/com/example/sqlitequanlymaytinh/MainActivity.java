@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -34,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
         bt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this,"bang may tinh co ton tai "+(isTableExists(database,"computer")),Toast.LENGTH_SHORT).show();
+                Intent quanly = new Intent(MainActivity.this,list_computer.class);
+                startActivity(quanly);
             }
         });
     }
@@ -74,6 +76,12 @@ public class MainActivity extends AppCompatActivity {
         if (database.insert("category",null,valuescategory) == -1) {
             Toast.makeText(this, "Fail to insert record", Toast.LENGTH_SHORT).show();
         }
+        valuescategory.put("maloai","MB");
+        valuescategory.put("tenloai","Máy tính để bàn");
+        if (database.insert("category",null,valuescategory) == -1) {
+            Toast.makeText(this, "Fail to insert record", Toast.LENGTH_SHORT).show();
+        }
+
 
 //        doInsertComputer
         ContentValues valuescomputer = new ContentValues();
@@ -85,7 +93,29 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Fail to insert record", Toast.LENGTH_SHORT).show();
         }
 
-        Toast.makeText(MainActivity.this,"chen thanh cong",Toast.LENGTH_SHORT).show();
+        valuescomputer.put("mamt","Laptop msi dragon");
+        valuescomputer.put("cpu","I7 9000");
+        valuescomputer.put("ram","16GB");
+        valuescomputer.put("maloai","LT");
+        if (database.insert("computer",null,valuescomputer) == -1) {
+            Toast.makeText(this, "Fail to insert record", Toast.LENGTH_SHORT).show();
+        }
+
+        valuescomputer.put("mamt","GVN Minion i1650");
+        valuescomputer.put("cpu","I3 10105F");
+        valuescomputer.put("ram","8GB");
+        valuescomputer.put("maloai","MB");
+        if (database.insert("computer",null,valuescomputer) == -1) {
+            Toast.makeText(this, "Fail to insert record", Toast.LENGTH_SHORT).show();
+        }
+
+        valuescomputer.put("mamt","GVN VIPER i3050");
+        valuescomputer.put("cpu","I5 12500F");
+        valuescomputer.put("ram","16GB");
+        valuescomputer.put("maloai","MB");
+        if (database.insert("computer",null,valuescomputer) == -1) {
+            Toast.makeText(this, "Fail to insert record", Toast.LENGTH_SHORT).show();
+        }
 
     }
 
